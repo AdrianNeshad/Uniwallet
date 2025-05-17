@@ -66,7 +66,7 @@ struct AddCard: View {
                     .keyboardType(.numbersAndPunctuation)
                 
                 Button(action: { showScanner = true }) {
-                    Label(appLanguage == "en" ? "Scan Code" : "Skanna kod",
+                    Label(appLanguage == "en" ? "Scan QR-Code or Barcorde" : "Skanna QR-kod eller streckkod",
                           systemImage: "camera")
                 }
             }
@@ -121,21 +121,9 @@ struct AddCard: View {
             codeTypes: supportedCodeTypes,
             scanMode: .once,
             showViewfinder: true,
-            simulatedData: "https://example.com",
             completion: handleScanResult
         )
         .edgesIgnoringSafeArea(.all)
-        .overlay(
-            VStack {
-                Text(appLanguage == "en" ? "Align code within frame" : "Rikta koden i ramen")
-                    .padding()
-                    .background(Color.black.opacity(0.7))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.top, 40)
-                Spacer()
-            }
-        )
     }
     
     private func handleScanResult(result: Result<ScanResult, ScanError>) {
