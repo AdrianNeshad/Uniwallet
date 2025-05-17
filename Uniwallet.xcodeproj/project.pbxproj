@@ -14,6 +14,8 @@
 		3A627B932DD8CDA80011695B /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 3A627B922DD8CDA80011695B /* CodeScanner */; };
 		3A627B952DD8D5AB0011695B /* CodeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B942DD8D5AB0011695B /* CodeImageView.swift */; };
 		3A627B972DD8DC540011695B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B962DD8DC540011695B /* Colors.swift */; };
+		3A627B9A2DD8ECAE0011695B /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B992DD8ECAE0011695B /* PurchaseView.swift */; };
+		3A627B9C2DD8ECC10011695B /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B9B2DD8ECC10011695B /* StoreManager.swift */; };
 		3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C22DD8A2560095FA0C /* CardStorage.swift */; };
 		3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C72DD8A2AA0095FA0C /* Card.swift */; };
 		3AB34CA32DD88CC4009731A8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */; };
@@ -55,6 +57,8 @@
 		3A627B8F2DD8C98B0011695B /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		3A627B942DD8D5AB0011695B /* CodeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageView.swift; sourceTree = "<group>"; };
 		3A627B962DD8DC540011695B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3A627B992DD8ECAE0011695B /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		3A627B9B2DD8ECC10011695B /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		3A6D25C22DD8A2560095FA0C /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
 		3A6D25C72DD8A2AA0095FA0C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A627B982DD8EC7B0011695B /* in-app purchase */ = {
+			isa = PBXGroup;
+			children = (
+				3A627B992DD8ECAE0011695B /* PurchaseView.swift */,
+				3A627B9B2DD8ECC10011695B /* StoreManager.swift */,
+			);
+			path = "in-app purchase";
+			sourceTree = "<group>";
+		};
 		3A6D25C42DD8A25C0095FA0C /* Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,10 +175,11 @@
 				3AD478F82DD88B00006C5CBC /* UniwalletApp.swift */,
 				3AB34CA42DD88D2E009731A8 /* Index.swift */,
 				3AD478FC2DD88B02006C5CBC /* Assets.xcassets */,
+				3A627B982DD8EC7B0011695B /* in-app purchase */,
+				3AD478FE2DD88B02006C5CBC /* Preview Content */,
 				3A6D25C42DD8A25C0095FA0C /* Cards */,
 				3AB34CA62DD88D70009731A8 /* Funktioner */,
 				3AB34CA72DD88D86009731A8 /* ViewModels */,
-				3AD478FE2DD88B02006C5CBC /* Preview Content */,
 			);
 			path = Uniwallet;
 			sourceTree = "<group>";
@@ -338,7 +352,9 @@
 				3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */,
 				3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */,
 				3ABCE3752DD8B31500E02772 /* AppFooter.swift in Sources */,
+				3A627B9A2DD8ECAE0011695B /* PurchaseView.swift in Sources */,
 				3A627B972DD8DC540011695B /* Colors.swift in Sources */,
+				3A627B9C2DD8ECC10011695B /* StoreManager.swift in Sources */,
 				3A627B8C2DD8C7270011695B /* RenameCard.swift in Sources */,
 				3AD478F92DD88B00006C5CBC /* UniwalletApp.swift in Sources */,
 				3A627B902DD8C98B0011695B /* ScanView.swift in Sources */,
