@@ -15,7 +15,7 @@ struct CardRow: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .fill(cardGradient(for: card.formatType))
                 .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
 
@@ -34,7 +34,7 @@ struct CardRow: View {
                         .padding(.horizontal, card.formatType == .qr ? 10 : 1)  // QR-koder
                         .padding(.vertical, card.formatType == .qr ? 10 : 1)// QR-koder
                         .background(Color.white)
-                        .cornerRadius(10)
+                        .cornerRadius(12)
                         .frame(maxWidth: .infinity)
                     
 
