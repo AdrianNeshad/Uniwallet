@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A627B8A2DD8C6CD0011695B /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B892DD8C6CD0011695B /* CardRow.swift */; };
+		3A627B8C2DD8C7270011695B /* RenameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B8B2DD8C7270011695B /* RenameCard.swift */; };
+		3A627B8E2DD8C7880011695B /* EmptyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B8D2DD8C7880011695B /* EmptyCard.swift */; };
+		3A627B902DD8C98B0011695B /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B8F2DD8C98B0011695B /* ScanView.swift */; };
 		3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C22DD8A2560095FA0C /* CardStorage.swift */; };
 		3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C72DD8A2AA0095FA0C /* Card.swift */; };
 		3AB34CA32DD88CC4009731A8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A627B892DD8C6CD0011695B /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
+		3A627B8B2DD8C7270011695B /* RenameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameCard.swift; sourceTree = "<group>"; };
+		3A627B8D2DD8C7880011695B /* EmptyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCard.swift; sourceTree = "<group>"; };
+		3A627B8F2DD8C98B0011695B /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		3A6D25C22DD8A2560095FA0C /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
 		3A6D25C72DD8A2AA0095FA0C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -93,6 +101,9 @@
 			children = (
 				3A6D25C22DD8A2560095FA0C /* CardStorage.swift */,
 				3A6D25C72DD8A2AA0095FA0C /* Card.swift */,
+				3A627B892DD8C6CD0011695B /* CardRow.swift */,
+				3A627B8B2DD8C7270011695B /* RenameCard.swift */,
+				3A627B8D2DD8C7880011695B /* EmptyCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -101,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				3ABCE3702DD8AB7100E02772 /* Language.swift */,
-				3ABCE3722DD8AEFD00E02772 /* Settings.swift */,
 				3ABCE3742DD8B31500E02772 /* AppFooter.swift */,
+				3A627B8F2DD8C98B0011695B /* ScanView.swift */,
 			);
 			path = Funktioner;
 			sourceTree = "<group>";
@@ -110,6 +121,7 @@
 		3AB34CA72DD88D86009731A8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3ABCE3722DD8AEFD00E02772 /* Settings.swift */,
 				3AB34CA82DD88DA0009731A8 /* AddCard.swift */,
 			);
 			path = ViewModels;
@@ -312,10 +324,14 @@
 				3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */,
 				3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */,
 				3ABCE3752DD8B31500E02772 /* AppFooter.swift in Sources */,
+				3A627B8C2DD8C7270011695B /* RenameCard.swift in Sources */,
 				3AD478F92DD88B00006C5CBC /* UniwalletApp.swift in Sources */,
+				3A627B902DD8C98B0011695B /* ScanView.swift in Sources */,
 				3ABCE3712DD8AB7100E02772 /* Language.swift in Sources */,
 				3ABCE3732DD8AEFD00E02772 /* Settings.swift in Sources */,
 				3AB34CA52DD88D2E009731A8 /* Index.swift in Sources */,
+				3A627B8A2DD8C6CD0011695B /* CardRow.swift in Sources */,
+				3A627B8E2DD8C7880011695B /* EmptyCard.swift in Sources */,
 				3AB34CA92DD88DA0009731A8 /* AddCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

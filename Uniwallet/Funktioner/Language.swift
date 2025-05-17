@@ -9,7 +9,7 @@ import SwiftUI
 
 class StringManager {
     static let shared = StringManager()
-    @AppStorage("appLanguage") var language: String = "en"
+    @AppStorage("appLanguage") var appLanguage: String = "en"
     
     private let en: [String: String] = [
         "X": "X",
@@ -20,7 +20,7 @@ class StringManager {
     ]
     
     func get(_ key: String) -> String {
-        let table = language == "en" ? en : sv
+        let table = appLanguage == "en" ? en : sv
         return table[key] ?? key
     }
 }

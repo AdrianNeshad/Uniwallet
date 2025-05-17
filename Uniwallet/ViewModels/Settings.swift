@@ -13,7 +13,6 @@ struct Settings: View {
     
     var body: some View {
         Form {
-            // Inställningar för utseende
             Section() {
                 Picker("Språk / Language", selection: $appLanguage) {
                     Text("English").tag("en")

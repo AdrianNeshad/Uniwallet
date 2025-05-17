@@ -8,39 +8,41 @@
 import SwiftUI
 
 struct Index: View {
-    @StateObject private var store = CardStorage()
+    @EnvironmentObject var store: CardStorage
     @AppStorage("appLanguage") var appLanguage: String = "en"
     @State private var searchTerm = ""
-    @State private var cards: [Card] = []
+    @State private var isRenaming = false
+    @State private var selectedCard: Card?
+    @State private var newTitle = ""
+    @State private var cardToDelete: Card? = nil
+    @State private var showDeleteConfirmation = false
 
     var body: some View {
         NavigationView {
             List {
-                if cards.isEmpty {
-                    VStack(spacing: 10) {
-                        Image(systemName: "creditcard")
-                            .font(.largeTitle)
-                            .foregroundColor(.gray)
-                        Text(appLanguage == "en" ? "You have not added any cards yet, click the '+' button to add a new card" : "Du har inte lagt till något kort, klicka på '+' knappen för att lägga till ett kort")
-                            .font(.body)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding()
+                if store.cards.isEmpty {
+                    EmptyCard()
                 } else {
-                    ForEach(store.cards) { card in
-                        VStack(alignment: .leading) {
-                            Text(card.title).font(.headline)
-                            Text(card.number).font(.subheadline)
-                            Text(card.isQRCode ? "QR-Code" : "Barcode").font(.caption)
-                        }
+                    ForEach(filteredCards) { card in
+                        CardRow(
+                            card: card,
+                            appLanguage: appLanguage,
+                            onRename: {
+                                selectedCard = card
+                                newTitle = card.title
+                                isRenaming = true
+                            },
+                            onDelete: {
+                                cardToDelete = card
+                                showDeleteConfirmation = true
+                            }
+                        )
                     }
-                    .onDelete(perform: store.removeCard)
                 }
             }
             .navigationTitle(appLanguage == "en" ? "My Cards" : "Mina kort")
-            .searchable(text: $searchTerm, prompt: appLanguage == "en" ? "Search for cards" : "Sök efter kort")
+            .searchable(text: $searchTerm,
+                        prompt: appLanguage == "en" ? "Search for cards" : "Sök efter kort")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddCard()) {
@@ -53,9 +55,49 @@ struct Index: View {
                     }
                 }
             }
+            .confirmationDialog(
+                appLanguage == "en" ? "Are you sure you want to delete this card?" : "Är du säker på att du vill ta bort detta kort?",
+                isPresented: $showDeleteConfirmation,
+                titleVisibility: .visible
+            ) {
+                Button(role: .destructive) {
+                    if let card = cardToDelete,
+                       let index = store.cards.firstIndex(of: card) {
+                        store.cards.remove(at: index)
+                        store.saveCards()
+                    }
+                    cardToDelete = nil
+                } label: {
+                    Text(appLanguage == "en" ? "Delete" : "Ta bort")
+                }
+
+                Button(appLanguage == "en" ? "Cancel" : "Avbryt", role: .cancel) {
+                    cardToDelete = nil
+                }
+            }
+            .sheet(isPresented: $isRenaming) {
+                RenameCard(
+                    isPresented: $isRenaming,
+                    selectedCard: $selectedCard,
+                    newTitle: $newTitle
+                )
+                .environmentObject(store)
+            }
+        }
+    }
+
+    var filteredCards: [Card] {
+        if searchTerm.isEmpty {
+            return store.cards
+        } else {
+            return store.cards.filter {
+                $0.title.localizedCaseInsensitiveContains(searchTerm)
+            }
         }
     }
 }
+
 #Preview {
     Index()
+        .environmentObject(CardStorage())
 }

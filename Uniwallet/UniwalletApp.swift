@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct UniwalletApp: App {
+    @StateObject private var store = CardStorage()
+    
     var body: some Scene {
         WindowGroup {
             Index()

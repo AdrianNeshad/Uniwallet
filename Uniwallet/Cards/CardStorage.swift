@@ -32,7 +32,7 @@ class CardStorage: ObservableObject {
         saveCards()
     }
     
-    private func saveCards() {
+    func saveCards() {
         do {
             let data = try JSONEncoder().encode(cards)
             try data.write(to: saveURL, options: [.atomic, .completeFileProtection])
