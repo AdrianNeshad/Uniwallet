@@ -11,7 +11,7 @@ import SwiftUI
 struct UniwalletApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Index()
         }
     }
 }
