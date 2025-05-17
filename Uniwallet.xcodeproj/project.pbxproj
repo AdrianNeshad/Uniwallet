@@ -31,6 +31,7 @@
 		3AD4790A2DD88B03006C5CBC /* UniwalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD479092DD88B03006C5CBC /* UniwalletTests.swift */; };
 		3AD479142DD88B03006C5CBC /* UniwalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD479132DD88B03006C5CBC /* UniwalletUITests.swift */; };
 		3AD479162DD88B03006C5CBC /* UniwalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD479152DD88B03006C5CBC /* UniwalletUITestsLaunchTests.swift */; };
+		3AEB56F22DD936350013B1AE /* RSBarcodes_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 3AEB56F12DD936350013B1AE /* RSBarcodes_Swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEB56F22DD936350013B1AE /* RSBarcodes_Swift in Frameworks */,
 				3A627B932DD8CDA80011695B /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +231,7 @@
 			name = Uniwallet;
 			packageProductDependencies = (
 				3A627B922DD8CDA80011695B /* CodeScanner */,
+				3AEB56F12DD936350013B1AE /* RSBarcodes_Swift */,
 			);
 			productName = Uniwallet;
 			productReference = 3AD478F52DD88B00006C5CBC /* Uniwallet.app */;
@@ -304,6 +307,7 @@
 			mainGroup = 3AD478EC2DD88B00006C5CBC;
 			packageReferences = (
 				3A627B912DD8CDA80011695B /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				3AEB56F02DD936350013B1AE /* XCRemoteSwiftPackageReference "RSBarcodes_Swift" */,
 			);
 			productRefGroup = 3AD478F62DD88B00006C5CBC /* Products */;
 			projectDirPath = "";
@@ -727,6 +731,14 @@
 				minimumVersion = 2.5.2;
 			};
 		};
+		3AEB56F02DD936350013B1AE /* XCRemoteSwiftPackageReference "RSBarcodes_Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeahdongcn/RSBarcodes_Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -734,6 +746,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A627B912DD8CDA80011695B /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
+		};
+		3AEB56F12DD936350013B1AE /* RSBarcodes_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AEB56F02DD936350013B1AE /* XCRemoteSwiftPackageReference "RSBarcodes_Swift" */;
+			productName = RSBarcodes_Swift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

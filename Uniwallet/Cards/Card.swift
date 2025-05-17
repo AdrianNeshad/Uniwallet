@@ -13,7 +13,7 @@ struct Card: Identifiable, Codable, Equatable {
     var number: String
     var formatType: FormatType
 
-    enum FormatType: String, Codable {
+    enum FormatType: String, Codable, CaseIterable {
         case qr = "QR Code"
         case ean13 = "EAN-13"
         case ean8 = "EAN-8"
@@ -26,8 +26,8 @@ struct Card: Identifiable, Codable, Equatable {
         case dataMatrix = "Data Matrix"
         case itf14 = "ITF-14"
         case interleaved2of5 = "Interleaved 2 of 5"
+        case codabar = "Codabar"           // ✅ Lagt till fullt stöd
         case unknown = "Unknown"
-        case codabar = "Codabar"
     }
 
     init(title: String, number: String) {
@@ -37,10 +37,16 @@ struct Card: Identifiable, Codable, Equatable {
         self.formatType = Self.detectFormatType(from: number)
     }
 
+    init(title: String, number: String, formatType: FormatType?) {
+        self.id = UUID()
+        self.title = title
+        self.number = number
+        self.formatType = formatType ?? Self.detectFormatType(from: number)
+    }
+
     static func detectFormatType(from code: String) -> FormatType {
         let numericOnly = code.filter { $0.isNumber }
 
-        // QR: Allt som är URL eller innehåller specialtecken
         if code.range(of: #"^https?://"#, options: .regularExpression) != nil {
             return .qr
         }
@@ -53,7 +59,6 @@ struct Card: Identifiable, Codable, Equatable {
             return .code39
         }
 
-        // Streckkodslängder
         switch numericOnly.count {
         case 8: return .ean8
         case 12...13: return .ean13
@@ -62,12 +67,10 @@ struct Card: Identifiable, Codable, Equatable {
         default: break
         }
 
-        // Tänk: personnummer, medlemsnummer, etc
         if code.range(of: #"^[0-9]{6}[- ]?[0-9]{4}$"#, options: .regularExpression) != nil {
-            return .code128 // visa som streckkod
+            return .code128
         }
 
-        // fallback
         return .code128
     }
 }
