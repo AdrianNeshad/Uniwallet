@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C22DD8A2560095FA0C /* CardStorage.swift */; };
+		3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C72DD8A2AA0095FA0C /* Card.swift */; };
 		3AB34CA32DD88CC4009731A8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */; };
 		3AB34CA52DD88D2E009731A8 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB34CA42DD88D2E009731A8 /* Index.swift */; };
 		3AB34CA92DD88DA0009731A8 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB34CA82DD88DA0009731A8 /* AddCard.swift */; };
 		3AB34CAC2DD892A4009731A8 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AB34CAB2DD892A4009731A8 /* Property List.plist */; };
 		3AD478F92DD88B00006C5CBC /* UniwalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD478F82DD88B00006C5CBC /* UniwalletApp.swift */; };
-		3AD478FB2DD88B00006C5CBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD478FA2DD88B00006C5CBC /* ContentView.swift */; };
 		3AD478FD2DD88B02006C5CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD478FC2DD88B02006C5CBC /* Assets.xcassets */; };
 		3AD479002DD88B02006C5CBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD478FF2DD88B02006C5CBC /* Preview Assets.xcassets */; };
 		3AD4790A2DD88B03006C5CBC /* UniwalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD479092DD88B03006C5CBC /* UniwalletTests.swift */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A6D25C22DD8A2560095FA0C /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
+		3A6D25C72DD8A2AA0095FA0C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3AB34CA42DD88D2E009731A8 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		3AB34CA82DD88DA0009731A8 /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		3AB34CAB2DD892A4009731A8 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		3AD478F52DD88B00006C5CBC /* Uniwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uniwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD478F82DD88B00006C5CBC /* UniwalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniwalletApp.swift; sourceTree = "<group>"; };
-		3AD478FA2DD88B00006C5CBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3AD478FC2DD88B02006C5CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD478FF2DD88B02006C5CBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3AD479052DD88B03006C5CBC /* UniwalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniwalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A6D25C42DD8A25C0095FA0C /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D25C22DD8A2560095FA0C /* CardStorage.swift */,
+				3A6D25C72DD8A2AA0095FA0C /* Card.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		3AB34CA62DD88D70009731A8 /* Funktioner */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,9 +131,9 @@
 			children = (
 				3AB34CAA2DD890D9009731A8 /* Info.plist */,
 				3AD478F82DD88B00006C5CBC /* UniwalletApp.swift */,
-				3AD478FA2DD88B00006C5CBC /* ContentView.swift */,
 				3AB34CA42DD88D2E009731A8 /* Index.swift */,
 				3AD478FC2DD88B02006C5CBC /* Assets.xcassets */,
+				3A6D25C42DD8A25C0095FA0C /* Cards */,
 				3AB34CA62DD88D70009731A8 /* Funktioner */,
 				3AB34CA72DD88D86009731A8 /* ViewModels */,
 				3AD478FE2DD88B02006C5CBC /* Preview Content */,
@@ -289,7 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD478FB2DD88B00006C5CBC /* ContentView.swift in Sources */,
+				3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */,
+				3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */,
 				3AD478F92DD88B00006C5CBC /* UniwalletApp.swift in Sources */,
 				3AB34CA52DD88D2E009731A8 /* Index.swift in Sources */,
 				3AB34CA92DD88DA0009731A8 /* AddCard.swift in Sources */,
@@ -456,10 +468,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Uniwallet/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = U4LPX7NYV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Uniwallet/Info.plist;
@@ -467,8 +481,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,9 +491,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = AdrianNeshad.Uniwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = AdrianNeshad.WalletStacker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Wallet Stacker1";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,8 +517,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
