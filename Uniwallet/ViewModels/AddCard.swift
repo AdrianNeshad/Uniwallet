@@ -66,7 +66,7 @@ struct AddCard: View {
                     .keyboardType(.numbersAndPunctuation)
                 
                 Button(action: { showScanner = true }) {
-                    Label(appLanguage == "en" ? "Scan QR-Code or Barcorde" : "Skanna QR-kod eller streckkod",
+                    Label(appLanguage == "en" ? "Scan QR-Code or Barcode" : "Skanna QR-kod eller streckkod",
                           systemImage: "camera")
                 }
             }
