@@ -27,6 +27,7 @@ struct Card: Identifiable, Codable, Equatable {
         case itf14 = "ITF-14"
         case interleaved2of5 = "Interleaved 2 of 5"
         case unknown = "Unknown"
+        case codabar = "Codabar"
     }
 
     init(title: String, number: String) {
@@ -37,32 +38,36 @@ struct Card: Identifiable, Codable, Equatable {
     }
 
     static func detectFormatType(from code: String) -> FormatType {
-        // QR-kod som URL
+        let numericOnly = code.filter { $0.isNumber }
+
+        // QR: Allt som är URL eller innehåller specialtecken
         if code.range(of: #"^https?://"#, options: .regularExpression) != nil {
             return .qr
         }
 
-        let numericOnly = code.filter { $0.isNumber }
-
-        switch numericOnly.count {
-        case 8: return .ean8
-        case 12...13: return .ean13
-        case 6...8: return .upce
-        case 14: return .itf14
-        default: break
+        if code.count > 30 && code.contains(" ") {
+            return .pdf417
         }
 
-        if code.starts(with: "*") && code.count >= 3 && code.last == "*" {
+        if code.contains("*") && code.count >= 3 {
             return .code39
         }
 
-        if code.range(of: #"^[A-Za-z0-9\-]+$"#, options: .regularExpression) != nil {
-            if code.count > 20 && code.contains(" ") {
-                return .pdf417
-            }
-            return .code128
+        // Streckkodslängder
+        switch numericOnly.count {
+        case 8: return .ean8
+        case 12...13: return .ean13
+        case 14: return .itf14
+        case 6...8: return .upce
+        default: break
         }
 
-        return .unknown
+        // Tänk: personnummer, medlemsnummer, etc
+        if code.range(of: #"^[0-9]{6}[- ]?[0-9]{4}$"#, options: .regularExpression) != nil {
+            return .code128 // visa som streckkod
+        }
+
+        // fallback
+        return .code128
     }
 }

@@ -76,7 +76,7 @@ struct AddCard: View {
                     HStack {
                         Image(systemName: formatIcon)
                             .foregroundColor(.blue)
-                        Text(Card.detectFormatType(from: number).rawValue.capitalized)
+                        Text("\(Card.detectFormatType(from: number).rawValue)")
                             .font(.subheadline)
                     }
                 }
