@@ -11,6 +11,8 @@
 		3A627B8C2DD8C7270011695B /* RenameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B8B2DD8C7270011695B /* RenameCard.swift */; };
 		3A627B8E2DD8C7880011695B /* EmptyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B8D2DD8C7880011695B /* EmptyCard.swift */; };
 		3A627B902DD8C98B0011695B /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B8F2DD8C98B0011695B /* ScanView.swift */; };
+		3A627B932DD8CDA80011695B /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 3A627B922DD8CDA80011695B /* CodeScanner */; };
+		3A627B952DD8D5AB0011695B /* CodeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A627B942DD8D5AB0011695B /* CodeImageView.swift */; };
 		3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C22DD8A2560095FA0C /* CardStorage.swift */; };
 		3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D25C72DD8A2AA0095FA0C /* Card.swift */; };
 		3AB34CA32DD88CC4009731A8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */; };
@@ -50,6 +52,7 @@
 		3A627B8B2DD8C7270011695B /* RenameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameCard.swift; sourceTree = "<group>"; };
 		3A627B8D2DD8C7880011695B /* EmptyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCard.swift; sourceTree = "<group>"; };
 		3A627B8F2DD8C98B0011695B /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		3A627B942DD8D5AB0011695B /* CodeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageView.swift; sourceTree = "<group>"; };
 		3A6D25C22DD8A2560095FA0C /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
 		3A6D25C72DD8A2AA0095FA0C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3AB34CA22DD88CC4009731A8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A627B932DD8CDA80011695B /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,7 @@
 			children = (
 				3ABCE3722DD8AEFD00E02772 /* Settings.swift */,
 				3AB34CA82DD88DA0009731A8 /* AddCard.swift */,
+				3A627B942DD8D5AB0011695B /* CodeImageView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -205,6 +210,9 @@
 			dependencies = (
 			);
 			name = Uniwallet;
+			packageProductDependencies = (
+				3A627B922DD8CDA80011695B /* CodeScanner */,
+			);
 			productName = Uniwallet;
 			productReference = 3AD478F52DD88B00006C5CBC /* Uniwallet.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +285,9 @@
 				Base,
 			);
 			mainGroup = 3AD478EC2DD88B00006C5CBC;
+			packageReferences = (
+				3A627B912DD8CDA80011695B /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 3AD478F62DD88B00006C5CBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,6 +341,7 @@
 				3ABCE3712DD8AB7100E02772 /* Language.swift in Sources */,
 				3ABCE3732DD8AEFD00E02772 /* Settings.swift in Sources */,
 				3AB34CA52DD88D2E009731A8 /* Index.swift in Sources */,
+				3A627B952DD8D5AB0011695B /* CodeImageView.swift in Sources */,
 				3A627B8A2DD8C6CD0011695B /* CardRow.swift in Sources */,
 				3A627B8E2DD8C7880011695B /* EmptyCard.swift in Sources */,
 				3AB34CA92DD88DA0009731A8 /* AddCard.swift in Sources */,
@@ -507,6 +519,7 @@
 				INFOPLIST_FILE = Uniwallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Wallet-Stacker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Appen behöver tillgång till kameran för att skanna QR-koder och streckkoder.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -520,6 +533,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = AdrianNeshad.WalletStacker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -544,6 +558,7 @@
 				INFOPLIST_FILE = Uniwallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Wallet-Stacker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Appen behöver tillgång till kameran för att skanna QR-koder och streckkoder.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -557,6 +572,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = AdrianNeshad.Uniwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -681,6 +697,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A627B912DD8CDA80011695B /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A627B922DD8CDA80011695B /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A627B912DD8CDA80011695B /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3AD478ED2DD88B00006C5CBC /* Project object */;
 }

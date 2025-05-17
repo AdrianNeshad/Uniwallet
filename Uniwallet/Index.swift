@@ -19,27 +19,32 @@ struct Index: View {
 
     var body: some View {
         NavigationView {
-            List {
-                if store.cards.isEmpty {
-                    EmptyCard()
-                } else {
-                    ForEach(filteredCards) { card in
-                        CardRow(
-                            card: card,
-                            appLanguage: appLanguage,
-                            onRename: {
-                                selectedCard = card
-                                newTitle = card.title
-                                isRenaming = true
-                            },
-                            onDelete: {
-                                cardToDelete = card
-                                showDeleteConfirmation = true
-                            }
-                        )
+            ScrollView {
+                LazyVStack(spacing: 12) {
+                    if store.cards.isEmpty {
+                        EmptyCard()
+                    } else {
+                        ForEach(filteredCards) { card in
+                            CardRow(
+                                card: card,
+                                appLanguage: appLanguage,
+                                onRename: {
+                                    selectedCard = card
+                                    newTitle = card.title
+                                    isRenaming = true
+                                },
+                                onDelete: {
+                                    cardToDelete = card
+                                    showDeleteConfirmation = true
+                                }
+                            )
+                        }
                     }
                 }
+                .padding(.horizontal)
+                .padding(.top, 8)
             }
+
             .navigationTitle(appLanguage == "en" ? "My Cards" : "Mina kort")
             .searchable(text: $searchTerm,
                         prompt: appLanguage == "en" ? "Search for cards" : "Sök efter kort")
