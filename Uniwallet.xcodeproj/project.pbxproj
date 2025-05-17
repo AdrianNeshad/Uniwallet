@@ -13,6 +13,8 @@
 		3AB34CA52DD88D2E009731A8 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB34CA42DD88D2E009731A8 /* Index.swift */; };
 		3AB34CA92DD88DA0009731A8 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB34CA82DD88DA0009731A8 /* AddCard.swift */; };
 		3AB34CAC2DD892A4009731A8 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AB34CAB2DD892A4009731A8 /* Property List.plist */; };
+		3ABCE3712DD8AB7100E02772 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCE3702DD8AB7100E02772 /* Language.swift */; };
+		3ABCE3732DD8AEFD00E02772 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCE3722DD8AEFD00E02772 /* Settings.swift */; };
 		3AD478F92DD88B00006C5CBC /* UniwalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD478F82DD88B00006C5CBC /* UniwalletApp.swift */; };
 		3AD478FD2DD88B02006C5CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD478FC2DD88B02006C5CBC /* Assets.xcassets */; };
 		3AD479002DD88B02006C5CBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD478FF2DD88B02006C5CBC /* Preview Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		3AB34CA82DD88DA0009731A8 /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
 		3AB34CAA2DD890D9009731A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3AB34CAB2DD892A4009731A8 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		3ABCE3702DD8AB7100E02772 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		3ABCE3722DD8AEFD00E02772 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		3AD478F52DD88B00006C5CBC /* Uniwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uniwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD478F82DD88B00006C5CBC /* UniwalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniwalletApp.swift; sourceTree = "<group>"; };
 		3AD478FC2DD88B02006C5CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		3AB34CA62DD88D70009731A8 /* Funktioner */ = {
 			isa = PBXGroup;
 			children = (
+				3ABCE3702DD8AB7100E02772 /* Language.swift */,
+				3ABCE3722DD8AEFD00E02772 /* Settings.swift */,
 			);
 			path = Funktioner;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 				3A6D25C32DD8A2560095FA0C /* CardStorage.swift in Sources */,
 				3A6D25C82DD8A2AA0095FA0C /* Card.swift in Sources */,
 				3AD478F92DD88B00006C5CBC /* UniwalletApp.swift in Sources */,
+				3ABCE3712DD8AB7100E02772 /* Language.swift in Sources */,
+				3ABCE3732DD8AEFD00E02772 /* Settings.swift in Sources */,
 				3AB34CA52DD88D2E009731A8 /* Index.swift in Sources */,
 				3AB34CA92DD88DA0009731A8 /* AddCard.swift in Sources */,
 			);
@@ -481,8 +489,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,8 +525,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

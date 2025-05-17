@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class CardStorage: ObservableObject {
     @Published var cards: [Card] = []
+    @AppStorage("appLanguage") var language: String = "en"
     
     private let saveURL: URL
     
