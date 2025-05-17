@@ -11,27 +11,36 @@ struct Index: View {
     @StateObject private var store = CardStorage()
     @AppStorage("appLanguage") var appLanguage: String = "en"
     @State private var searchTerm = ""
-    @FocusState private var isSearchFocused: Bool
+    @State private var cards: [Card] = []
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(store.cards) { card in
-                    VStack(alignment: .leading) {
-                        Text(card.title).font(.headline)
-                        Text(card.number).font(.subheadline)
-                        Text(card.isQRCode ? "QR-Code" : "Barcode").font(.caption)
+                if cards.isEmpty {
+                    VStack(spacing: 10) {
+                        Image(systemName: "creditcard")
+                            .font(.largeTitle)
+                            .foregroundColor(.gray)
+                        Text(appLanguage == "en" ? "You have not added any cards yet, click the '+' button to add a new card" : "Du har inte lagt till något kort, klicka på '+' knappen för att lägga till ett kort")
+                            .font(.body)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
                     }
-                }
-                .onDelete(perform: store.removeCard)
-                
-                if !isSearchFocused && searchTerm.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    AppFooter()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding()
+                } else {
+                    ForEach(store.cards) { card in
+                        VStack(alignment: .leading) {
+                            Text(card.title).font(.headline)
+                            Text(card.number).font(.subheadline)
+                            Text(card.isQRCode ? "QR-Code" : "Barcode").font(.caption)
+                        }
+                    }
+                    .onDelete(perform: store.removeCard)
                 }
             }
             .navigationTitle(appLanguage == "en" ? "My Cards" : "Mina kort")
             .searchable(text: $searchTerm, prompt: appLanguage == "en" ? "Search for cards" : "Sök efter kort")
-            .focused($isSearchFocused)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddCard()) {
