@@ -10,7 +10,7 @@ import SwiftUI
 
 class CardStorage: ObservableObject {
     @Published var cards: [Card] = []
-    @AppStorage("appLanguage") var language: String = "en"
+    @AppStorage("appLanguage") var appLanguage: String = "en"
     
     private let saveURL: URL
     
@@ -37,7 +37,7 @@ class CardStorage: ObservableObject {
             let data = try JSONEncoder().encode(cards)
             try data.write(to: saveURL, options: [.atomic, .completeFileProtection])
         } catch {
-            print("❌ Error saving cards: \(error.localizedDescription)")
+            print(appLanguage == "en" ? "❌ Error saving cards: \(error.localizedDescription)" : "❌ Fel vid sparande av kort: \(error.localizedDescription)")
         }
     }
     
@@ -47,7 +47,7 @@ class CardStorage: ObservableObject {
             let decoded = try JSONDecoder().decode([Card].self, from: data)
             self.cards = decoded
         } catch {
-            print("ℹ️ No saved cards found or failed to load.")
+            print(appLanguage == "en" ? "No saved cards found or failed to load" : " Inga sparade kort eller fel vid hämtning")
             self.cards = []
         }
     }

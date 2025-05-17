@@ -11,6 +11,7 @@ struct Index: View {
     @StateObject private var store = CardStorage()
     @AppStorage("appLanguage") var appLanguage: String = "en"
     @State private var searchTerm = ""
+    @FocusState private var isSearchFocused: Bool
 
     var body: some View {
         NavigationView {
@@ -23,9 +24,14 @@ struct Index: View {
                     }
                 }
                 .onDelete(perform: store.removeCard)
+                
+                if !isSearchFocused && searchTerm.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    AppFooter()
+                }
             }
             .navigationTitle(appLanguage == "en" ? "My Cards" : "Mina kort")
             .searchable(text: $searchTerm, prompt: appLanguage == "en" ? "Search for cards" : "Sök efter kort")
+            .focused($isSearchFocused)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddCard()) {

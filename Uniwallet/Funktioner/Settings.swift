@@ -6,13 +6,23 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct Settings: View {
+    @AppStorage("appLanguage") private var appLanguage = "en"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            // Inställningar för utseende
+            Section() {
+                Picker("Språk / Language", selection: $appLanguage) {
+                    Text("English").tag("en")
+                    Text("Svenska").tag("sv")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+            AppFooter()
+        }
+        .navigationTitle(appLanguage == "en" ? "Settings" : "Inställningar")   
     }
-}
-
-#Preview {
-    Settings()
 }
