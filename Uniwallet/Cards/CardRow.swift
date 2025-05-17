@@ -31,11 +31,12 @@ struct CardRow: View {
                 }
                 VStack(spacing: 6) {
                     CodeImageView(data: card.number, format: card.formatType)
-                        .padding(.horizontal, 2)
-                        .padding(.vertical, 1)
+                        .padding(.horizontal, card.formatType == .qr ? 10 : 1)  // QR-koder
+                        .padding(.vertical, card.formatType == .qr ? 10 : 1)// QR-koder
                         .background(Color.white)
                         .cornerRadius(10)
                         .frame(maxWidth: .infinity)
+                    
 
                     Text(card.formatType.rawValue + " - " + card.number)
                         .font(.system(.subheadline, design: .monospaced))

@@ -15,6 +15,7 @@ struct CodeImageView: View {
     private let context = CIContext()
     private let qrFilter = CIFilter.qrCodeGenerator()
     private let pdf417Filter = CIFilter.pdf417BarcodeGenerator()
+    private let aztecFilter = CIFilter(name: "CIAztecCodeGenerator")!
     private let dataMatrixFilter = CIFilter(name: "CIDataMatrixCodeGenerator")
     private let code128Filter = CIFilter.code128BarcodeGenerator()
 
@@ -42,10 +43,13 @@ struct CodeImageView: View {
         case .pdf417:
             pdf417Filter.setValue(data, forKey: "inputMessage")
             filter = pdf417Filter
+        case .aztec:
+            aztecFilter.setValue(data, forKey: "inputMessage")
+            filter = aztecFilter
         case .dataMatrix:
             dataMatrixFilter?.setValue(data, forKey: "inputMessage")
             filter = dataMatrixFilter
-        case .code128, .code39, .code93, .ean8, .ean13, .upce, .itf14, .interleaved2of5:
+        case .code128, .code39, .code93, .ean8, .ean13, .upce, .itf14, .interleaved2of5, .codabar:
             code128Filter.setValue(data, forKey: "inputMessage")
             filter = code128Filter
         default:
@@ -54,11 +58,14 @@ struct CodeImageView: View {
 
         guard var outputImage = filter?.outputImage else { return nil }
 
-        // ✂️ Beskär bort marginal (quiet zone)
-        outputImage = outputImage.cropped(to: outputImage.extent.insetBy(dx: 4, dy: 4))
+        // 📏 Croppa bara 1D-koder (streckkoder), inte 2D-koder
+        let is2D: Bool = [.qr, .pdf417, .aztec, .dataMatrix].contains(format)
+        if !is2D {
+            outputImage = outputImage.cropped(to: outputImage.extent.insetBy(dx: 2, dy: 2))
+        }
 
-        // 🔍 Skala upp för kvalitet
-        let scale = CGAffineTransform(scaleX: 8, y: 8)
+        // Skala upp ordentligt
+        let scale = CGAffineTransform(scaleX: 10, y: 10)
         let scaledImage = outputImage.transformed(by: scale)
 
         guard let cgImage = context.createCGImage(scaledImage, from: scaledImage.extent) else {
