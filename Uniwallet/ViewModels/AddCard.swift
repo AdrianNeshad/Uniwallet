@@ -73,7 +73,8 @@ struct AddCard: View {
                 }
 
                 Picker(appLanguage == "en" ? "Format (optional)" : "Format (valfritt)", selection: $selectedFormat) {
-                    Text(appLanguage == "en" ? "Automatic" : "Automatisk").tag(Card.FormatType?.none)
+                    Text(appLanguage == "en" ? "Automatic" : "Automatisk")
+                        .tag(Optional(Card.detectFormatType(from: number)))
                     ForEach(Card.FormatType.allCases.filter { $0 != .unknown }, id: \.self) { format in
                         Text(format.rawValue).tag(Optional(format))
                     }

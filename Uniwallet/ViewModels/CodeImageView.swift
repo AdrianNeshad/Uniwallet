@@ -72,7 +72,8 @@ struct CodeImageView: View {
         case .interleaved2of5:
             return RSUnifiedCodeGenerator.shared.generateCode(string, machineReadableCodeObjectType: AVMetadataObject.ObjectType.interleaved2of5.rawValue)
         case .codabar:
-            return RSUnifiedCodeGenerator.shared.generateCode(string, machineReadableCodeObjectType: "org.gs1.Codabar") // special fallback
+            let generator = RSBarCodeCodabarGenerator()
+            return generator.generateCode(string)  // special fallback
 
         default:
             return nil
